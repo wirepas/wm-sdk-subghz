@@ -18,7 +18,7 @@ a SLA licensee, please see the right contact from www.wirepas.com/contact__
 
 To start using the sdk, please select the desired release.
 
-They are listed on the [release page](https://github.com/wirepas/wm-sdk-testing/releases).
+They are listed on the [release page](https://github.com/wirepas/wm-sdk-subghz/releases).
 
 Each realease has a tag with following format vx.x.x (Ex: v1.0.0).
 
