@@ -10,5 +10,6 @@ var dir_0188a3e6da905bc60aceb35bf790b8c9 =
     [ "wms_state.h", "d4/d27/wms__state_8h.html", "d4/d27/wms__state_8h" ],
     [ "wms_storage.h", "d4/d75/wms__storage_8h.html", "d4/d75/wms__storage_8h" ],
     [ "wms_system.h", "df/d6b/wms__system_8h.html", "df/d6b/wms__system_8h" ],
+    [ "wms_testing.h", "d4/de9/wms__testing_8h.html", "d4/de9/wms__testing_8h" ],
     [ "wms_time.h", "d9/d53/wms__time_8h.html", "d9/d53/wms__time_8h" ]
 ];

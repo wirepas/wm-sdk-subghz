@@ -21,6 +21,7 @@ var wms__state_8h =
       [ "cost", "d4/d27/wms__state_8h.html#a403b6f77447a921497e186aff3107823", null ],
       [ "is_da_support", "d4/d27/wms__state_8h.html#a604fca5edb55a686bad9144f60cb6c92", null ],
       [ "is_ll", "d4/d27/wms__state_8h.html#a0fd32c72c2f1c2e6b715c14fbcc41a0c", null ],
+      [ "is_secured", "d4/d27/wms__state_8h.html#a8a097fe4bfb986d17ec46c1d26265185", null ],
       [ "is_sink", "d4/d27/wms__state_8h.html#a6149885080d7e0559447dcbccedcfe3b", null ],
       [ "rssi", "d4/d27/wms__state_8h.html#a3b962e67ba74725bd60ca3c29f785abe", null ],
       [ "txpower", "d4/d27/wms__state_8h.html#ad701b4a3eb1ea31ef7721e2656e7b7a8", null ],

@@ -1,5 +1,10 @@
 var wms__settings_8h =
 [
+    [ "app_lib_settings_key_provisioning_t", "df/d62/wms__settings_8h.html#d2/d4b/structapp__lib__settings__key__provisioning__t", [
+      [ "management_key_pair", "df/d62/wms__settings_8h.html#ac8c9fe03c4136f86daf73050ebffda4f", null ],
+      [ "network_key_pair", "df/d62/wms__settings_8h.html#aece5d8371eaaa8b1a814d7c2f06fd65f", null ],
+      [ "sequence_number", "df/d62/wms__settings_8h.html#a2ee05bf9e631381c7730c7f67b69e85b", null ]
+    ] ],
     [ "app_lib_settings_t", "df/d62/wms__settings_8h.html#de/d5b/structapp__lib__settings__t", [
       [ "getAcRange", "df/d62/wms__settings_8h.html#a0cb66c203e0716301b69b403f2cda72c", null ],
       [ "getAcRangeLimits", "df/d62/wms__settings_8h.html#a572fae9b766a997fa1f24513b1dc43e7", null ],
@@ -18,6 +23,7 @@ var wms__settings_8h =
       [ "isValidNetworkChannel", "df/d62/wms__settings_8h.html#a71d48da699880d0b63ace03f3f191bdc", null ],
       [ "isValidNodeAddress", "df/d62/wms__settings_8h.html#a5962b05f84aad7f25b492479ed3ba8bf", null ],
       [ "isValidNodeRole", "df/d62/wms__settings_8h.html#a194fa3fe93b7f0ba589263d659502693", null ],
+      [ "provisionKeys", "df/d62/wms__settings_8h.html#a8a424c06a9ba1495ccb392bdf04bbeaf", null ],
       [ "registerGroupQuery", "df/d62/wms__settings_8h.html#a4f6e72a53bbd71152ea996bedfa29785", null ],
       [ "resetAll", "df/d62/wms__settings_8h.html#a9a6ef9b9b9a423c397a6a0c4e10eada3", null ],
       [ "setAcRange", "df/d62/wms__settings_8h.html#a2b06e7a9878d4b776d9dd8176bd7ef06", null ],
@@ -31,6 +37,14 @@ var wms__settings_8h =
       [ "setNodeRole", "df/d62/wms__settings_8h.html#abf7f2536086b561d2d0e1cf0b55fce5c", null ],
       [ "setOfflineScan", "df/d62/wms__settings_8h.html#a7bbd71329c9b54468fd35155719cbb40", null ],
       [ "setReservedChannels", "df/d62/wms__settings_8h.html#a69420374f1366b94e0ebb8acad518ae6", null ]
+    ] ],
+    [ "app_lib_settings_key_provisioning_t.network_key_pair", "df/d62/wms__settings_8h.html#d2/d7b/structapp__lib__settings__key__provisioning__t_8network__key__pair", [
+      [ "authentication_key_p", "df/d62/wms__settings_8h.html#a2e3cfae02198416391003eeb3706735f", null ],
+      [ "encryption_key_p", "df/d62/wms__settings_8h.html#a2a395e0834c2de926bc8e44970c04b55", null ]
+    ] ],
+    [ "app_lib_settings_key_provisioning_t.management_key_pair", "df/d62/wms__settings_8h.html#d9/d1e/structapp__lib__settings__key__provisioning__t_8management__key__pair", [
+      [ "authentication_key_p", "df/d62/wms__settings_8h.html#a2e3cfae02198416391003eeb3706735f", null ],
+      [ "encryption_key_p", "df/d62/wms__settings_8h.html#a2a395e0834c2de926bc8e44970c04b55", null ]
     ] ],
     [ "app_lib_settings_get_ac_range_f", "df/d62/wms__settings_8h.html#a81ceb0e7dd252eca631602fa78a00993", null ],
     [ "app_lib_settings_get_ac_range_limits_f", "df/d62/wms__settings_8h.html#ac3fb0302622c3ca5fcfd369e92a5ab6e", null ],
@@ -52,6 +66,7 @@ var wms__settings_8h =
     [ "app_lib_settings_is_valid_node_role_f", "df/d62/wms__settings_8h.html#ab0d387c21ebd3cd12fa25e7d44561fb0", null ],
     [ "app_lib_settings_net_addr_t", "df/d62/wms__settings_8h.html#a69db270642a7b444986c801131fcbd66", null ],
     [ "app_lib_settings_net_channel_t", "df/d62/wms__settings_8h.html#af0559e67154ec6b6dc9c34ccad540861", null ],
+    [ "app_lib_settings_provision_keys_f", "df/d62/wms__settings_8h.html#af7ecaf22abc1ab81fd75e18af543c7a4", null ],
     [ "app_lib_settings_reset_all_f", "df/d62/wms__settings_8h.html#a140d39369516a938d1348ac86e65e0a2", null ],
     [ "app_lib_settings_role_t", "df/d62/wms__settings_8h.html#a6e80e9f924c933ad9e52603b56a3f82a", null ],
     [ "app_lib_settings_set_ac_range_f", "df/d62/wms__settings_8h.html#a6f719184b46f29cb7e7475a30859950a", null ],

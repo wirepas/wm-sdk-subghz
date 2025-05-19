@@ -215,7 +215,7 @@ Application startup</h1>
 <div class="line">    ...</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>This <em>entry point function</em> <b>must</b> be implemented in every application!</dd></dl>
-<p><code>functions</code> parameter is a global list of function pointers for the application. Normally this is not needed at all and is mainly needed for backwards compatibility of the applications.</p>
+<p><code>functions</code> parameter is a global list of function pointers for the application. It is provided for convenience and backward compatibility of the applications.</p>
 <p>The stack is not yet running when <code>App_init()</code> is called. Depending on the stored settings and stack state, the stack may start right after returning from <code>App_init()</code>.</p>
 <h1><a class="anchor" id="adding_new_source_files_to_the_application"></a>
 Adding new source files</h1>

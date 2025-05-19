@@ -36,19 +36,12 @@ var NAVTREE =
     [ "SDK Environment setup", "dd/d6a/sdk_environment.html", [
       [ "Installation of SDK Environment", "dd/d6a/sdk_environment.html#installation_of_sdk_environment", null ],
       [ "Flashing devices", "dd/d6a/sdk_environment.html#flashing_guideline", null ],
-      [ "Resources on Nordic nRF52", "dd/d6a/sdk_environment.html#nordic_resources", [
-        [ "Flash Memory available for application on nRF52", "dd/d6a/sdk_environment.html#flash_memory_nrf52", null ],
-        [ "RAM Memory available for application on nRF52", "dd/d6a/sdk_environment.html#ram_memory_nrf52", null ],
-        [ "Peripherals accessible by stack only", "dd/d6a/sdk_environment.html#peripherals_accessible_by_stack_only", null ],
-        [ "Peripherals shared between the stack and the application", "dd/d6a/sdk_environment.html#peripherals_shared_between_the_stack_and_the_application", null ],
-        [ "Peripherals available for the application", "dd/d6a/sdk_environment.html#peripherals_available_for_the_application", null ]
-      ] ],
       [ "Resources on EFR32", "dd/d6a/sdk_environment.html#efr32_resources", [
         [ "Flash Memory available for application on EFR32", "dd/d6a/sdk_environment.html#flash_memory_efr32", null ],
         [ "RAM Memory available for application on EFR32", "dd/d6a/sdk_environment.html#ram_memory_efr32", null ],
-        [ "Peripherals accessible by stack only", "dd/d6a/sdk_environment.html#peripherals_accessible_by_stack_only2", null ],
-        [ "Peripherals shared between the stack and the application", "dd/d6a/sdk_environment.html#peripherals_shared_between_the_stack_and_the_application2", null ],
-        [ "Peripherals available for the application", "dd/d6a/sdk_environment.html#peripherals_available_for_the_application2", null ]
+        [ "Peripherals accessible by stack only", "dd/d6a/sdk_environment.html#peripherals_accessible_by_stack_only_efr32", null ],
+        [ "Peripherals shared between the stack and the application", "dd/d6a/sdk_environment.html#peripherals_shared_between_the_stack_and_the_application_efr32", null ],
+        [ "Peripherals available for the application", "dd/d6a/sdk_environment.html#peripherals_available_for_the_application_efr32", null ]
       ] ],
       [ "Related Material", "dd/d6a/sdk_environment.html#autotoc_md0", null ]
     ] ],
@@ -171,17 +164,18 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d2/d9e/cbor_8h.html#a896c1858e21ce8bea9c643cf7799ba5a",
-"d4/d27/wms__state_8h.html#a39ad217d32c2986151820eb24c74e618",
-"d5/d53/dsap__frames_8h.html#af8d2e29d5309f0a20febcfbe40848f47",
-"d6/d50/wms__data_8h.html#ab53b6510f8ecb4a1621c905c15855164a5a4b7dbb7517d5f7d85930d66b035fc5",
-"d7/ded/shared__neighbors_8h.html",
-"d8/d21/msap__frames_8h.html#da/d2f/structmsap__sink__cost__read__cnf__t",
-"da/d1b/function__codes_8h.html#a5d932513e8009c2280045fe336ff4138a9f4526bafd2680d8b5d86aa9fba2ecb1",
-"db/db1/waps__frames_8h.html#aa014186b836ca0589945706229ae9fec",
-"dd/d2c/bl__interface_8h.html#aebb70c2aab3407a9f05334c47131a43b",
-"df/d62/wms__settings_8h.html#a0b1b9db3793501870ae79136ba23da81",
-"dir_0006c00be31d721fe51aa50d6c40dad2.html"
+"d2/d9e/cbor_8h.html#a80de52f1e01c5c4a718780c734e33ee5",
+"d4/d27/wms__state_8h.html#a317f50bd4ec70608fcab95aa001455fa",
+"d5/d53/dsap__frames_8h.html#ad35cab9ac558c322115f7bb21ceb13aa",
+"d6/d50/wms__data_8h.html#a932d5f262cc8230a48f61471df3918d7a50464eb84fffa32bc5439f9845ed2043",
+"d7/d9b/silabs__brd4210a_2board_8h.html#a8c090fdc29940fd44b204eb07bf3ff15",
+"d8/d21/msap__frames_8h.html#aa45e97d3cffc2f281aecbfbb890bf344aa77e9733920ff26105bee92fa8757eb7",
+"d9/de5/waddr_8h.html#a98be44f3705bc9213f0ce0c3acbf0bca",
+"da/dc2/sl__list_8h.html#a516b97d8c15d96b5f355f8e9fe697ad5",
+"dd/d2c/bl__interface_8h.html#a49c952c08096e3abf60613fea2a81c12",
+"de/d59/csap__frames_8h.html#ab94c0fc8c2b40fac43bfa24a682755b9abd9ad86811f1b3bf1db7db2e9e7c14f8",
+"df/d6b/wms__system_8h.html#a51d626023dc9f39cb5ea38204b735f0eac467dc8f89ea2db89df966e4055027d4",
+"globals_eval.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
