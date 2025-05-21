@@ -1,6 +1,7 @@
 const versions = [
 'v1.0.0',
 'v1.1.0_beta',
+'v1.1.0_beta2',
 'latest'
 ];
 
