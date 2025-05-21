@@ -43,7 +43,6 @@ var annotated =
     [ "app_lib_storage_t", "d4/d75/wms__storage_8h.html#d3/d48/structapp__lib__storage__t", "d4/d75/wms__storage_8h_d3/d48/structapp__lib__storage__t" ],
     [ "app_lib_system_radio_info_t", "df/d6b/wms__system_8h.html#d8/d72/structapp__lib__system__radio__info__t", "df/d6b/wms__system_8h_d8/d72/structapp__lib__system__radio__info__t" ],
     [ "app_lib_system_t", "df/d6b/wms__system_8h.html#d3/dd6/structapp__lib__system__t", "df/d6b/wms__system_8h_d3/dd6/structapp__lib__system__t" ],
-    [ "app_lib_testing_t", "d4/de9/wms__testing_8h.html#d3/da0/structapp__lib__testing__t", "d4/de9/wms__testing_8h_d3/da0/structapp__lib__testing__t" ],
     [ "app_lib_time_t", "d9/d53/wms__time_8h.html#da/dda/structapp__lib__time__t", "d9/d53/wms__time_8h_da/dda/structapp__lib__time__t" ],
     [ "app_v2_tag_t", "da/dbb/wms__app_8h.html#d0/d0a/unionapp__v2__tag__t", "da/dbb/wms__app_8h_d0/d0a/unionapp__v2__tag__t" ],
     [ "bl_flash_info_t", "dd/d2c/bl__interface_8h.html#d3/d91/structbl__flash__info__t", "dd/d2c/bl__interface_8h_d3/d91/structbl__flash__info__t" ],
