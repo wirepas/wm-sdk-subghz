@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: wirepas/sdk-builder:v1.5
+      image: wirepas/sdk-builder:v2.2
       options: --user 0
 
     steps:
