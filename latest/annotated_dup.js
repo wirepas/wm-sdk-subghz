@@ -1,12 +1,12 @@
-var annotated =
+var annotated_dup =
 [
     [ "aes_128_t", "d3/dbf/aessw_8h.html#d7/d1a/unionaes__128__t", "d3/dbf/aessw_8h_d7/d1a/unionaes__128__t" ],
     [ "AES_ctx", "db/dcb/aes_8h.html#d5/d77/struct_a_e_s__ctx", "db/dcb/aes_8h_d5/d77/struct_a_e_s__ctx" ],
     [ "aes_data_stream_t", "d3/dbf/aessw_8h.html#d7/d95/structaes__data__stream__t", "d3/dbf/aessw_8h_d7/d95/structaes__data__stream__t" ],
-    [ "aes_data_stream_t.__unnamed__", "d3/dbf/aessw_8h.html#d4/dbf/unionaes__data__stream__t_8____unnamed____", "d3/dbf/aessw_8h_d4/dbf/unionaes__data__stream__t_8____unnamed____" ],
+    [ "aes_data_stream_t.__unnamed6__", "d3/dbf/aessw_8h.html#da/d4d/unionaes__data__stream__t_8____unnamed6____", "d3/dbf/aessw_8h_da/d4d/unionaes__data__stream__t_8____unnamed6____" ],
     [ "aes_omac1_state_t", "d3/dbf/aessw_8h.html#d4/d48/structaes__omac1__state__t", "d3/dbf/aessw_8h_d4/d48/structaes__omac1__state__t" ],
     [ "app_firmware_version_t", "da/dbb/wms__app_8h.html#d4/da5/unionapp__firmware__version__t", "da/dbb/wms__app_8h_d4/da5/unionapp__firmware__version__t" ],
-    [ "app_firmware_version_t.__unnamed__", "da/dbb/wms__app_8h.html#db/ddc/structapp__firmware__version__t_8____unnamed____", "da/dbb/wms__app_8h_db/ddc/structapp__firmware__version__t_8____unnamed____" ],
+    [ "app_firmware_version_t.__unnamed1__", "da/dbb/wms__app_8h.html#de/d2e/structapp__firmware__version__t_8____unnamed1____", "da/dbb/wms__app_8h_de/d2e/structapp__firmware__version__t_8____unnamed1____" ],
     [ "app_global_functions_t", "da/dbb/wms__app_8h.html#d6/d81/structapp__global__functions__t", "da/dbb/wms__app_8h_d6/d81/structapp__global__functions__t" ],
     [ "app_information_header_t", "da/dbb/wms__app_8h.html#d4/deb/structapp__information__header__t", "da/dbb/wms__app_8h_d4/deb/structapp__information__header__t" ],
     [ "app_lib_config_data_item_t", "d6/d50/wms__data_8h.html#d7/d76/structapp__lib__config__data__item__t", "d6/d50/wms__data_8h_d7/d76/structapp__lib__config__data__item__t" ],
@@ -57,7 +57,7 @@ var annotated =
     [ "CborParser", "d2/d9e/cbor_8h.html#df/d18/struct_cbor_parser", "d2/d9e/cbor_8h_df/d18/struct_cbor_parser" ],
     [ "CborValue", "d2/d9e/cbor_8h.html#dd/d56/struct_cbor_value", "d2/d9e/cbor_8h_dd/d56/struct_cbor_value" ],
     [ "crc_t", "dc/de6/crc_8h.html#db/deb/unioncrc__t", "dc/de6/crc_8h_db/deb/unioncrc__t" ],
-    [ "crc_t.__unnamed__", "dc/de6/crc_8h.html#d7/d17/structcrc__t_8____unnamed____", "dc/de6/crc_8h_d7/d17/structcrc__t_8____unnamed____" ],
+    [ "crc_t.__unnamed8__", "dc/de6/crc_8h.html#d8/d2c/structcrc__t_8____unnamed8____", "dc/de6/crc_8h_d8/d2c/structcrc__t_8____unnamed8____" ],
     [ "csap_reset_req_t", "de/d59/csap__frames_8h.html#d8/ded/structcsap__reset__req__t", "de/d59/csap__frames_8h_d8/ded/structcsap__reset__req__t" ],
     [ "double_buffer_t", "d7/df6/doublebuffer_8h.html#d0/d86/structdouble__buffer__t", "d7/df6/doublebuffer_8h_d0/d86/structdouble__buffer__t" ],
     [ "dsap_data_rx_frag_ind_t", "d5/d53/dsap__frames_8h.html#dc/d3f/structdsap__data__rx__frag__ind__t", "d5/d53/dsap__frames_8h_dc/d3f/structdsap__data__rx__frag__ind__t" ],
@@ -130,7 +130,7 @@ var annotated =
     [ "tlv_record", "d7/dc3/tlv_8h.html#df/ddc/structtlv__record", "d7/dc3/tlv_8h_df/ddc/structtlv__record" ],
     [ "waps_frame_payload_t", "db/db1/waps__frames_8h.html#da/d09/unionwaps__frame__payload__t", "db/db1/waps__frames_8h_da/d09/unionwaps__frame__payload__t" ],
     [ "waps_frame_t", "db/db1/waps__frames_8h.html#d1/d5c/structwaps__frame__t", "db/db1/waps__frames_8h_d1/d5c/structwaps__frame__t" ],
-    [ "waps_frame_t.__unnamed__", "dd/db3/unionwaps__frame__t_8____unnamed____.html", "dd/db3/unionwaps__frame__t_8____unnamed____" ],
+    [ "waps_frame_t.__unnamed4__", "dc/d5b/unionwaps__frame__t_8____unnamed4____.html", "dc/d5b/unionwaps__frame__t_8____unnamed4____" ],
     [ "waps_item_t", "d5/d7e/structwaps__item__t.html", "d5/d7e/structwaps__item__t" ],
     [ "waps_prot_t", "d1/d3f/structwaps__prot__t.html", "d1/d3f/structwaps__prot__t" ],
     [ "write_cnf_t", "d6/da5/attribute__frames_8h.html#db/d14/structwrite__cnf__t", "d6/da5/attribute__frames_8h_db/d14/structwrite__cnf__t" ],

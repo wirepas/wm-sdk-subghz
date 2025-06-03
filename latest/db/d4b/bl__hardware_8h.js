@@ -6,5 +6,5 @@ var bl__hardware_8h =
       [ "dcdc", "db/d4b/bl__hardware_8h.html#aa8b1220e1f623a6b1e4a7aae240017d6", null ],
       [ "platform", "db/d4b/bl__hardware_8h.html#a2eece72ff2bbad517b776f79f7c563a2", null ]
     ] ],
-    [ "hardware_getCapabilities", "db/d4b/bl__hardware_8h.html#a2ebd632a7ccefad632977a68b030ea10", null ]
+    [ "hardware_getCapabilities", "db/d4b/bl__hardware_8h.html#af76fc53c23f602bb711d98bf8ff20720", null ]
 ];

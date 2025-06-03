@@ -1,15 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"globals_t.html":[9,0,18],
-"globals_type.html":[9,3],
-"globals_u.html":[9,0,19],
-"globals_v.html":[9,0,20],
-"globals_vars.html":[9,2],
-"globals_w.html":[9,0,21],
-"index.html":[0],
-"index.html":[],
-"index.html#application":[0,0],
-"index.html#bootloader":[0,5],
 "index.html#bootloader_extension":[0,6],
 "index.html#hardware":[0,7],
 "index.html#sdk_hal":[0,3],

@@ -1,38 +1,31 @@
 /*
-@licstart  The following is the entire license notice for the
-JavaScript code in this file.
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
 
-Copyright (C) 1997-2019 by Dimitri van Heesch
+ The MIT License (MIT)
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of version 2 of the GNU General Public License as published by
-the Free Software Foundation
+ Copyright (C) 1997-2020 by Dimitri van Heesch
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
 
-@licend  The above is the entire license notice
-for the JavaScript code in this file
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var NAVTREE =
 [
   [ "Wirepas SDK", "index.html", [
-    [ "Single-MCU Operation Overview", "index.html", [
-      [ "Application", "index.html#application", null ],
-      [ "Wirepas Mesh Single MCU API", "index.html#single_mcu_api", null ],
-      [ "SDK libraries", "index.html#sdk_libraries", null ],
-      [ "Application-specific Hardware Abstraction Layer (HAL)", "index.html#sdk_hal", null ],
-      [ "Wirepas Mesh Stack", "index.html#wirepas_firmware", null ],
-      [ "Wirepas Mesh Bootloader", "index.html#bootloader", null ],
-      [ "Custom bootloader extension", "index.html#bootloader_extension", null ],
-      [ "The physical Hardware", "index.html#hardware", null ]
-    ] ],
+    [ "Single-MCU Operation Overview", "index.html", "index" ],
     [ "SDK Environment setup", "dd/d6a/sdk_environment.html", [
       [ "Installation of SDK Environment", "dd/d6a/sdk_environment.html#installation_of_sdk_environment", null ],
       [ "Flashing devices", "dd/d6a/sdk_environment.html#flashing_guideline", null ],
@@ -141,21 +134,25 @@ var NAVTREE =
         [ "INI_FILE", "d5/d7b/application_examples.html#config_mk_ini_file", null ]
       ] ]
     ] ],
-    [ "Data Structures", "annotated.html", "annotated" ],
-    [ "Data Fields", "functions.html", [
-      [ "All", "functions.html", "functions_dup" ],
-      [ "Functions", "functions_func.html", null ],
-      [ "Variables", "functions_vars.html", "functions_vars" ]
+    [ "Data Structures", "annotated.html", [
+      [ "Data Structures", "annotated.html", "annotated_dup" ],
+      [ "Data Fields", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ]
+      ] ]
     ] ],
-    [ "File List", "files.html", "files" ],
-    [ "Globals", "globals.html", [
-      [ "All", "globals.html", "globals_dup" ],
-      [ "Functions", "globals_func.html", "globals_func" ],
-      [ "Variables", "globals_vars.html", null ],
-      [ "Typedefs", "globals_type.html", null ],
-      [ "Enumerations", "globals_enum.html", null ],
-      [ "Enumerator", "globals_eval.html", "globals_eval" ],
-      [ "Macros", "globals_defs.html", "globals_defs" ]
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
+      [ "Globals", "globals.html", [
+        [ "All", "globals.html", "globals_dup" ],
+        [ "Functions", "globals_func.html", "globals_func" ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", "globals_eval" ],
+        [ "Macros", "globals_defs.html", "globals_defs" ]
+      ] ]
     ] ],
     [ "Example applications", "examples.html", "examples" ]
   ] ]
@@ -164,18 +161,18 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d2/d9e/cbor_8h.html#a80de52f1e01c5c4a718780c734e33ee5",
+"d2/d9e/cbor_8h.html#a7d1bf6025bf79637dd52806ed0503331",
 "d4/d27/wms__state_8h.html#a317f50bd4ec70608fcab95aa001455fa",
 "d5/d63/dualmcu__lib_8h.html#aa267ba0cb0c8fa9778930ad837301e36a42014a979fdce9f769b4c82ae000621d",
 "d6/d50/wms__data_8h.html#ab53b6510f8ecb4a1621c905c15855164abc148375192b9cd13d5a3733def48cf6",
 "d7/dc3/tlv_8h.html#a849e9473d3954c57c1a4f976aedd019da0a29e48ca5fe6df9cd0463a0c99f4fd8",
 "d8/d21/msap__frames_8h.html#ac9e42bc3f331a9213430e7c1b1d1bc98a7606ebce7e30a9715879e112be846a22",
-"da/d1b/function__codes_8h.html#a1334d12387caa39ddff53238ed4e1a37",
-"db/d37/makefile__color_8mk.html",
-"dd/d2c/bl__interface_8h.html#a935dcebd09fec384e242e1f45b02ac9d",
-"de/d7a/how_to_develop.html#build_application",
-"df/d99/wms__otap_8h.html#a0f8df54af52441810e03dde561c23811",
-"globals_t.html"
+"da/d1b/function__codes_8h.html#a5d932513e8009c2280045fe336ff4138a19878661f1de522fc8100573b862a973",
+"db/d41/timing_8h.html#a884497f3269a8ae82bcd0a4814997702",
+"dd/d2c/bl__interface_8h.html#a9a1d6078d92f4d46b59e7f80ef16b898a1a28228a2c91c43fd8ae40e7c992a15f",
+"de/d7a/how_to_develop.html#flashing_device",
+"df/d99/wms__otap_8h.html#a471f1fe9b71534a54c285db244a4210a",
+"index.html#bootloader_extension"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
