@@ -8,6 +8,7 @@ var files_dup =
     [ "libraries", "dir_bc0718b08fb2015b8e59c47b2805f60c.html", "dir_bc0718b08fb2015b8e59c47b2805f60c" ],
     [ "mcu", "dir_4cee3ed2fe28b98d73407141cfd215dc.html", "dir_4cee3ed2fe28b98d73407141cfd215dc" ],
     [ "util", "dir_23ec12649285f9fabf3a6b7380226c28.html", "dir_23ec12649285f9fabf3a6b7380226c28" ],
+    [ "config.mk", "d6/d6f/config_8mk.html", null ],
     [ "makefile_app.mk", "d3/dea/makefile__app_8mk.html", null ],
     [ "makefile_bl_updater.mk", "d0/d42/makefile__bl__updater_8mk.html", null ],
     [ "makefile_bootloader.mk", "d0/dd0/makefile__bootloader_8mk.html", null ],
@@ -15,6 +16,5 @@ var files_dup =
     [ "makefile_color.mk", "db/d37/makefile__color_8mk.html", null ],
     [ "makefile_common.mk", "d0/d80/makefile__common_8mk.html", null ],
     [ "makefile_scratchpad.mk", "d5/df2/makefile__scratchpad_8mk.html", null ],
-    [ "makefile_stack.mk", "dd/dbc/makefile__stack_8mk.html", null ],
-    [ "config.mk", "d6/d6f/config_8mk.html", null ]
+    [ "makefile_stack.mk", "dd/dbc/makefile__stack_8mk.html", null ]
 ];
