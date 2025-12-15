@@ -619,6 +619,39 @@ typedef struct __attribute__((__packed__))
     uint8_t npd_payload[MSAP_NPD_PAYLOAD_MAX_LEN];
 } msap_config_data_item_ind_t;
 
+/** Maximum payload for custom protocol frames.
+ *  Sized so that msap_custom_proto_ind_t (1 byte overhead + payload) exactly
+ *  matches msap_scratchpad_block_req_t, the largest frame in frame_msap (117
+ *  bytes = 4 start_addr + 1 num_bytes + 112 bytes[]).
+ */
+#define MSAP_CUSTOM_PAYLOAD_MAX_LEN 116
+
+/** MSAP-WAPS_FUNC_MSAP_CUSTOM_PROTO_REQ indication frame */
+typedef struct __attribute__((__packed__))
+{
+    /** Data */
+    uint8_t payload[MSAP_CUSTOM_PAYLOAD_MAX_LEN];
+} msap_custom_proto_req_t;
+
+/** MSAP-WAPS_FUNC_MSAP_CUSTOM_PROTO_CONF frame */
+typedef struct __attribute__((__packed__))
+{
+    /** Data */
+    uint8_t payload[MSAP_CUSTOM_PAYLOAD_MAX_LEN];
+} msap_custom_proto_cnf_t;
+
+typedef struct __attribute__ ((__packed__))
+{
+    uint8_t queued_indications;
+    uint8_t payload[MSAP_CUSTOM_PAYLOAD_MAX_LEN];
+} msap_custom_proto_ind_t;
+
+/** MSAP-WAPS_FUNC_MSAP_CUSTOM_PROTO_RSP frame (host acknowledgment of IND) */
+typedef struct __attribute__((__packed__))
+{
+    uint8_t payload[MSAP_CUSTOM_PAYLOAD_MAX_LEN];
+} msap_custom_proto_rsp_t;
+
 typedef union
 {
     msap_start_req_t                    start_req;
@@ -651,6 +684,10 @@ typedef union
     msap_config_data_item_ind_t         config_data_item_ind;
     msap_config_data_list_items_req_t   config_data_list_items_req;
     msap_config_data_list_items_cnf_t   config_data_list_items_cnf;
+    msap_custom_proto_req_t             custom_proto_req;
+    msap_custom_proto_cnf_t             custom_proto_cnf;
+    msap_custom_proto_ind_t             custom_proto_ind;
+    msap_custom_proto_rsp_t             custom_proto_rsp;
 } frame_msap;
 
 #endif /* MSAP_FRAMES_H_ */

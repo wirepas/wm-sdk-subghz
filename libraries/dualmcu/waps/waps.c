@@ -28,6 +28,9 @@
 #include "stack_state.h"
 #include "ds.h"
 
+/** Is waps module initialized? */
+static bool m_initialized = false;
+
 /** Define safety margin for processing WAPS */
 #define WAPS_SAFETY_MARGIN_US  8000u
 
@@ -213,7 +216,7 @@ static void item_free_threshold_cb(void)
     Shared_Data_readyToReceive(&m_waps_data_filter);
 }
 
-bool Waps_init(uint32_t baudrate, bool flow_ctrl)
+bool Waps_init(uint32_t baudrate, bool flow_ctrl, Dualmcu_lib_prop_cb prop_cb)
 {
     uint16_t id;
     shared_app_config_filter_t app_config_filter = {
@@ -228,6 +231,8 @@ bool Waps_init(uint32_t baudrate, bool flow_ctrl)
     //register callbacks
     Shared_Data_addDataReceivedCb(&m_waps_data_filter);
     Shared_Appconfig_addFilter(&app_config_filter, &id);
+
+    Msap_setProprietaryCb(prop_cb);
 
     // Register callback for new config data items
     lib_data->setConfigDataItemReceivedCb(config_data_item_cb);
@@ -281,10 +286,30 @@ bool Waps_init(uint32_t baudrate, bool flow_ctrl)
 
         // Start a task to remove old indication (according to TTL)
         App_Scheduler_addTask_execTime(periodic_maintenance_task, WAPS_MAINTENANCE_TASK_PERIOD_MS, 100);
+
+        m_initialized = true;
         return true;
     }
 
     return false;
+}
+
+bool Waps_send_proprietary_indication(uint8_t * buffer, size_t len)
+{
+    waps_item_t * indication;
+    if (!m_initialized)
+    {
+        return false;
+    }
+
+    indication = Msap_getProprietaryIndication(buffer, len);
+    if (indication == NULL)
+    {
+        return false;
+    }
+
+    add_indication(indication);
+    return true;
 }
 
 uint32_t Waps_exec(void)
