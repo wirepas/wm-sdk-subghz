@@ -25,5 +25,5 @@ void App_init(const app_global_functions_t * functions)
     (void) functions;
 
 
-    Dualmcu_lib_init(UART_BAUDRATE, UART_FLOWCONTROL);
+    Dualmcu_lib_init(UART_BAUDRATE, UART_FLOWCONTROL, NULL);
 }
