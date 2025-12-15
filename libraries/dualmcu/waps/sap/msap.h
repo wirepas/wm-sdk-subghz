@@ -9,6 +9,8 @@
 
 #include "waps_item.h"
 #include "api.h"
+#include "dualmcu_lib.h"
+
 
 /**
  *  \brief  Process received request
@@ -58,5 +60,22 @@ void Msap_onScannedNbors(waps_item_t * item);
  */
 void Msap_handleCdc(const app_lib_config_data_item_t * cdc_item,
                     waps_item_t * item);
+
+/**
+ * \brief   Set the proprietary callback
+ * \param   cb
+ *          The callback to call upon reception of proprietary message
+ */
+void Msap_setProprietaryCb(Dualmcu_lib_prop_cb cb);
+
+/**
+ * \brief   Build a proprietary indication item to be queued toward the host
+ * \param   buffer
+ *          Payload to embed (must be <= MSAP_CUSTOM_PAYLOAD_MAX_LEN bytes)
+ * \param   len
+ *          Length of buffer
+ * \return  Allocated waps_item, or NULL if len is too large or pool is full
+ */
+waps_item_t * Msap_getProprietaryIndication(uint8_t * buffer, size_t len);
 
 #endif /* WAPS_MSAP_H_ */

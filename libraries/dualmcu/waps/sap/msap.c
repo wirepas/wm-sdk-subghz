@@ -20,6 +20,8 @@
 #include "stack_state.h"
 #include "ds.h"
 
+static Dualmcu_lib_prop_cb m_proprietary_cb;
+
 /* Request handlers */
 static bool stackStart(waps_item_t * item);
 static bool stackStop(waps_item_t * item);
@@ -78,6 +80,7 @@ static bool scratchpadReadTarget(waps_item_t * item);
 static bool allowScratchpadRead(void);
 static bool scratchpadReadBlock(waps_item_t * item);
 static bool remoteStatus(waps_item_t * item);
+static bool proprietaryRequest(waps_item_t * item);
 
 /**
  * \brief   Get config data item request
@@ -358,6 +361,8 @@ bool Msap_handleFrame(waps_item_t * item)
             return configDataItemGet(item);
         case WAPS_FUNC_MSAP_CONFIG_DATA_LIST_ITEMS_REQ:
             return configDataListItems(item);
+        case WAPS_FUNC_MSAP_CUSTOM_PROTO_REQ:
+            return proprietaryRequest(item);
         default:
             return false;
     }
@@ -375,6 +380,30 @@ waps_item_t * Msap_getStackStatusIndication(void)
         item->frame.sfid = 0;
         msap_state_ind_t * ind = &item->frame.msap.state_ind;
         ind->result = appLibState2SappStackState(lib_state->getStackState());
+        ind->queued_indications = 0;
+    }
+    return item;
+}
+
+waps_item_t * Msap_getProprietaryIndication(uint8_t * buffer, size_t len)
+{
+    if (len > MSAP_CUSTOM_PAYLOAD_MAX_LEN)
+    {
+        // Buffer is too big, cannot fit in indication
+        return NULL;
+    }
+
+    waps_item_t * item = Waps_itemReserve(WAPS_ITEM_TYPE_INDICATION);
+
+    if (item != NULL)
+    {
+        Waps_item_init(item,
+                       WAPS_FUNC_MSAP_CUSTOM_PROTO_IND,
+                       sizeof(msap_custom_proto_ind_t) - MSAP_CUSTOM_PAYLOAD_MAX_LEN + len);
+        item->time = 0;
+        item->frame.sfid = 0;
+        msap_custom_proto_ind_t * ind = &item->frame.msap.custom_proto_ind;
+        memcpy(ind->payload, buffer, len);
         ind->queued_indications = 0;
     }
     return item;
@@ -1613,6 +1642,43 @@ static bool configDataListItems(waps_item_t *item)
     return true;
 }
 
+static bool proprietaryRequest(waps_item_t *item)
+{
+    msap_custom_proto_cnf_t confirm;
+    size_t size = 0;
+
+    if (item->frame.splen > MSAP_CUSTOM_PAYLOAD_MAX_LEN)
+    {
+        return false;
+    }
+
+    if (m_proprietary_cb != NULL)
+    {
+        size = m_proprietary_cb(item->frame.msap.custom_proto_req.payload,
+                                item->frame.splen,
+                                confirm.payload,
+                                sizeof(confirm.payload)
+                                );
+
+        if (size > sizeof(confirm.payload))
+        {
+            // It is an issue, shorten the answer
+            size = sizeof(confirm.payload);
+        }
+    }
+
+    Waps_item_init(item,
+                   WAPS_FUNC_MSAP_CUSTOM_PROTO_CNF,
+                   size);
+
+    // Result is a proprietay value
+    memcpy(&item->frame.msap.custom_proto_cnf.payload,
+           confirm.payload,
+           size);
+    return true;
+}
+
+
 static bool configDataItemGet(waps_item_t *item)
 {
     uint16_t endpoint = item->frame.msap.config_data_item_get_req.npd_endpoint;
@@ -1687,4 +1753,9 @@ void Msap_handleCdc(const app_lib_config_data_item_t * cdc_item,
     memset(&ind->npd_payload, 0xFF, MSAP_NPD_PAYLOAD_MAX_LEN);
     // Then set rest
     memcpy(&ind->npd_payload, cdc_item->bytes, cdc_item->length);
+}
+
+void Msap_setProprietaryCb(Dualmcu_lib_prop_cb cb)
+{
+    m_proprietary_cb = cb;
 }

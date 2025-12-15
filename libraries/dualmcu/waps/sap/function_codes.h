@@ -153,6 +153,11 @@ typedef enum
     WAPS_FUNC_RESERVED_REMOTE_API_4_REQ = 0x63,
     WAPS_FUNC_RESERVED_REMOTE_API_4_CNF = 0xE3,
 
+    /* Special ID to encapsulate custom protocol */
+    WAPS_FUNC_MSAP_CUSTOM_PROTO_REQ = 0x70,
+    WAPS_FUNC_MSAP_CUSTOM_PROTO_CNF = 0xF0,
+    WAPS_FUNC_MSAP_CUSTOM_PROTO_IND = 0x71,
+    WAPS_FUNC_MSAP_CUSTOM_PROTO_RSP = 0xF1,
 } waps_func_e;
 
 /* When you add/remove functions, make sure you update the tables below */
@@ -193,7 +198,8 @@ typedef enum
     WAPS_FUNC_MSAP_SCRATCHPAD_BLOCK_READ_REQ,       \
     WAPS_FUNC_MSAP_CONFIG_DATA_ITEM_SET_REQ,        \
     WAPS_FUNC_MSAP_CONFIG_DATA_ITEM_GET_REQ,        \
-    WAPS_FUNC_MSAP_CONFIG_DATA_LIST_ITEMS_REQ,    \
+    WAPS_FUNC_MSAP_CONFIG_DATA_LIST_ITEMS_REQ,      \
+    WAPS_FUNC_MSAP_CUSTOM_PROTO_REQ,                \
 }
 
 #define CSAP_REQUESTS                   \
@@ -238,7 +244,8 @@ typedef enum
     WAPS_FUNC_MSAP_SCRATCHPAD_BLOCK_READ_CNF,       \
     WAPS_FUNC_MSAP_CONFIG_DATA_ITEM_SET_CNF,        \
     WAPS_FUNC_MSAP_CONFIG_DATA_ITEM_GET_CNF,        \
-    WAPS_FUNC_MSAP_CONFIG_DATA_LIST_ITEMS_CNF,    \
+    WAPS_FUNC_MSAP_CONFIG_DATA_LIST_ITEMS_CNF,      \
+    WAPS_FUNC_MSAP_CUSTOM_PROTO_CNF                 \
 }
 
 #define WAPS_INDICATIONS                            \
@@ -251,6 +258,7 @@ typedef enum
     WAPS_FUNC_MSAP_REMOTE_STATUS_IND,               \
     WAPS_FUNC_MSAP_SCAN_NBORS_IND,                  \
     WAPS_FUNC_MSAP_CONFIG_DATA_ITEM_IND,            \
+    WAPS_FUNC_MSAP_CUSTOM_PROTO_IND,                \
 }
 
 #define WAPS_RESPONSES                              \
@@ -265,6 +273,7 @@ typedef enum
     WAPS_FUNC_MSAP_STACK_SLEEP_STATE_GET_RSP,       \
     WAPS_FUNC_MSAP_STACK_SLEEP_GOTOSLEEPINFO_RSP,   \
     WAPS_FUNC_MSAP_CONFIG_DATA_ITEM_RSP,            \
+    WAPS_FUNC_MSAP_CUSTOM_PROTO_RSP,                \
 }
 
 /** \brief  Check if given func code is a request

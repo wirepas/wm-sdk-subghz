@@ -20,7 +20,7 @@
 #include <stdbool.h>
 
 #include "api.h"
-
+#include "dualmcu_lib.h"
 
 /**
  * \brief   Initializes waps and modules it requires.
@@ -31,7 +31,7 @@
  *          Is flow control enabled
  * \return  True if successful, false otherwise
  */
-bool Waps_init(uint32_t baudrate, bool flow_ctrl);
+bool Waps_init(uint32_t baudrate, bool flow_ctrl, Dualmcu_lib_prop_cb prop_cb);
 
 
 /**
@@ -54,5 +54,7 @@ void Waps_packetSent(app_lib_data_tracking_id_t tracking_id,
                      uint32_t queue_time,
                      app_addr_t dst_addr,
                      bool success);
+
+bool Waps_send_proprietary_indication(uint8_t * buffer, size_t len);
 
 #endif // WAPS_H_
