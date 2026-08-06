@@ -28,6 +28,7 @@ void Wireshark_print(
         uint8_t dst_ep,
         int8_t rssi,
         uint32_t delay,
+        const app_lib_data_fragment_t * fragment_info,
         const uint8_t * data,
         size_t len);
 
