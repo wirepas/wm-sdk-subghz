@@ -52,9 +52,15 @@ void Wireshark_print(
         uint8_t dst_ep,
         int8_t rssi,
         uint32_t delay,
+        const app_lib_data_fragment_t * fragment_info,
         const uint8_t * data,
         size_t len)
 {
+    uint8_t has_fragment = (fragment_info != NULL) ? 1 : 0;
+    uint16_t packet_id = has_fragment ? fragment_info->packet_id : 0;
+    uint16_t fragment_offset = has_fragment ? fragment_info->fragment_offset : 0;
+    uint8_t last_fragment = has_fragment ? (uint8_t) fragment_info->last_fragment : 0;
+
     /* Print new frame char */
     Usart_sendBuffer(&SLIP_END, 1);
 
@@ -66,6 +72,10 @@ void Wireshark_print(
     slip_send_buffer((uint8_t *) &dst_ep, 1);
     slip_send_buffer((uint8_t *) &rssi, 1);
     slip_send_buffer((uint8_t *) &delay, 4);
+    slip_send_buffer(&has_fragment, 1);
+    slip_send_buffer((uint8_t *) &packet_id, 2);
+    slip_send_buffer((uint8_t *) &fragment_offset, 2);
+    slip_send_buffer(&last_fragment, 1);
 
     slip_send_buffer(data, len);
 

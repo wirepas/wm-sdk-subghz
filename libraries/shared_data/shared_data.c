@@ -238,6 +238,7 @@ static app_lib_data_receive_res_e received_cb(
         data->dest_endpoint,
         data->rssi,
         data->delay_hp,
+        data->fragment_info,
         data->bytes,
         data->num_bytes
         );
@@ -517,6 +518,7 @@ app_lib_data_send_res_e Shared_Data_sendData(
             data->dest_endpoint,
             0,
             0,
+            (data->flags & APP_LIB_DATA_SEND_FRAGMENTED_PACKET) ? &data->fragment_info : NULL,
             data->bytes,
             data->num_bytes
             );
