@@ -223,6 +223,25 @@ static bool group_query_cb(app_addr_t group_addr)
     return false;
 }
 
+#ifdef WIRESHARK
+/* The capture direction depends on this device's role, not on the RX/TX path:
+ * at a sink, received traffic is uplink (heading out of the network) and sent
+ * traffic is downlink; at a node it is the opposite. (Node-to-node traffic is
+ * not really supported, so this assumption holds.) */
+static uint8_t wireshark_direction(bool is_reception)
+{
+    app_lib_settings_role_t role = 0;
+    lib_settings->getNodeRole(&role);
+    bool is_sink = (role == APP_LIB_SETTINGS_ROLE_SINK_LE
+                 || role == APP_LIB_SETTINGS_ROLE_SINK_LL);
+    if (is_reception)
+    {
+        return is_sink ? WIRESHARK_TYPE_UPLINK : WIRESHARK_TYPE_DOWNLINK;
+    }
+    return is_sink ? WIRESHARK_TYPE_DOWNLINK : WIRESHARK_TYPE_UPLINK;
+}
+#endif
+
 static app_lib_data_receive_res_e received_cb(
                                         const app_lib_data_received_t * data)
 {
@@ -231,6 +250,7 @@ static app_lib_data_receive_res_e received_cb(
 
 #ifdef WIRESHARK
     Wireshark_print(
+        wireshark_direction(true),   /* reception: uplink at a sink, downlink at a node */
         data->src_address,
         data->dest_address,
         data->qos,
@@ -238,6 +258,8 @@ static app_lib_data_receive_res_e received_cb(
         data->dest_endpoint,
         data->rssi,
         data->delay_hp,
+        data->hops,        /* hop count from reception */
+        0,                 /* hop_limit: not applicable on reception */
         data->fragment_info,
         data->bytes,
         data->num_bytes
@@ -511,6 +533,7 @@ app_lib_data_send_res_e Shared_Data_sendData(
 #ifdef WIRESHARK
         Wireshark_print(
         // no rssi nor delay so 0 for both
+            wireshark_direction(false),  /* transmission: downlink at a sink, uplink at a node */
             node_addr,
             data->dest_address,
             data->qos,
@@ -518,6 +541,8 @@ app_lib_data_send_res_e Shared_Data_sendData(
             data->dest_endpoint,
             0,
             0,
+            0,                 /* hops: not applicable on transmission */
+            data->hop_limit,   /* hop limit from transmission */
             (data->flags & APP_LIB_DATA_SEND_FRAGMENTED_PACKET) ? &data->fragment_info : NULL,
             data->bytes,
             data->num_bytes
