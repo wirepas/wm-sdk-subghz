@@ -25,7 +25,7 @@ typedef enum
 {
     WIRESHARK_TYPE_DOWNLINK = 0,   /* sent to the mesh */
     WIRESHARK_TYPE_UPLINK   = 1,   /* received from the mesh */
-    /* WIRESHARK_TYPE_BEACON = 2,     future: network beacons */
+    WIRESHARK_TYPE_BEACON   = 2,   /* network/cluster beacon heard by the stack */
 } wireshark_frame_type_e;
 
 void Wireshark_print(
