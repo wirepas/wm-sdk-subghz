@@ -94,6 +94,6 @@ SECTIONS
     /DISCARD/ :
     {
         *(.ARM.extab)
-        *(.ARM.exidx)
+        *(.ARM.exidx*)
     }
 }
