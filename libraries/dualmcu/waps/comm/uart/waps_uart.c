@@ -232,7 +232,7 @@ static void frame_completed(void)
 #endif /* WAPS_DIAGNOSTICS */
     }
 
-    if ( error != 0)
+    if ( error != 0 && m_rx_buffer_idx > 1)
     {
         // Error in reception from host, so no answer will be provided.
         // In order to avoid host waiting for timeout
