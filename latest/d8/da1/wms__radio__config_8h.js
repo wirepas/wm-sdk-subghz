@@ -19,7 +19,7 @@ var wms__radio__config_8h =
     ] ],
     [ "app_lib_radio_cfg_power_t", "d8/da1/wms__radio__config_8h.html#db/de5/structapp__lib__radio__cfg__power__t", [
       [ "power_count", "d8/da1/wms__radio__config_8h.html#ad2d6bc76111fa780fbf0700e5fed829c", null ],
-      [ "powers", "d8/da1/wms__radio__config_8h.html#a99d2e8e1675036f3e63f5d109023b147", null ],
+      [ "powers", "d8/da1/wms__radio__config_8h.html#abeb6dd6ab37da4f54532fbb311d5b318", null ],
       [ "rx_current", "d8/da1/wms__radio__config_8h.html#ac172b9243dc93902929400d439706725", null ],
       [ "rx_gain_db", "d8/da1/wms__radio__config_8h.html#aa9cfc1ad54a3e032e49c49033c5a16db", null ]
     ] ],
@@ -42,6 +42,7 @@ var wms__radio__config_8h =
       [ "APP_LIB_RADIO_CFG_FEM_PWR_ON", "d8/da1/wms__radio__config_8h.html#a198f7a8d83d5a6f34a323d2ca02000e9aa46be437c9d7ac664940091e30df50cf", null ],
       [ "APP_LIB_RADIO_CFG_FEM_PWR_OFF", "d8/da1/wms__radio__config_8h.html#a198f7a8d83d5a6f34a323d2ca02000e9aa61ff2f7d313a9359a9aadf09fc74ad1", null ]
     ] ],
+    [ "APP_LIB_DECT_BAND_22", "d8/da1/wms__radio__config_8h.html#a62cdfff7f405890925bd8bf5d7dcfc90", null ],
     [ "APP_LIB_RADIO_CFG_CURRENT_MAX", "d8/da1/wms__radio__config_8h.html#a80b3fe636d9c9226276fbebbeb0c849b", null ],
     [ "APP_LIB_RADIO_CFG_CURRENT_MIN", "d8/da1/wms__radio__config_8h.html#a83c88c1fcb443f47b60a896dd170a682", null ],
     [ "APP_LIB_RADIO_CFG_NAME", "d8/da1/wms__radio__config_8h.html#ad2f5996b476330efcc9b9242196acaf9", null ],

@@ -88,7 +88,8 @@ var wms__state_8h =
       [ "APP_LIB_STATE_STACK_EVENT_SCAN_STOPPED", "d4/d27/wms__state_8h.html#ab8e78bf991f825121530014fef8b8383aa9d4311700732a557a5f0fa9d1ec9746", null ],
       [ "APP_LIB_STATE_STACK_EVENT_SCRAT_XFER_STARTED", "d4/d27/wms__state_8h.html#ab8e78bf991f825121530014fef8b8383a207707c7375de73337cc043e165f89ac", null ],
       [ "APP_LIB_STATE_STACK_EVENT_SCRAT_XFER_STOPPED", "d4/d27/wms__state_8h.html#ab8e78bf991f825121530014fef8b8383a59ce8b938d65a7c8f254c12b2f9e404f", null ],
-      [ "APP_LIB_STATE_STACK_EVENT_ROUTE_CHANGED", "d4/d27/wms__state_8h.html#ab8e78bf991f825121530014fef8b8383a3b8e841e8bfd0202894dde4d6c762569", null ]
+      [ "APP_LIB_STATE_STACK_EVENT_ROUTE_CHANGED", "d4/d27/wms__state_8h.html#ab8e78bf991f825121530014fef8b8383a3b8e841e8bfd0202894dde4d6c762569", null ],
+      [ "APP_LIB_STATE_STACK_EVENT_CON_FALLBCK", "d4/d27/wms__state_8h.html#ab8e78bf991f825121530014fef8b8383a725b0212bed5b0109c1882957cbb3231", null ]
     ] ],
     [ "app_lib_state_beacon_type_e", "d4/d27/wms__state_8h.html#a56dba5ba5a60c45f2340fcdd3b6f7279", [
       [ "APP_LIB_STATE_BEACON_TYPE_NB", "d4/d27/wms__state_8h.html#a56dba5ba5a60c45f2340fcdd3b6f7279aa9ea15ec52506e425d96d427e2502ca3", null ],

@@ -101,6 +101,7 @@ $(document).ready(function(){initNavTree('dd/d6a/sdk_environment.html','../../')
 <li><a class="el" href="../../dd/d6a/sdk_environment.html#installation_of_sdk_environment">Installation of SDK Environment</a></li>
 <li><a class="el" href="../../dd/d6a/sdk_environment.html#flashing_guideline">Flashing devices</a></li>
 <li><a class="el" href="../../dd/d6a/sdk_environment.html#efr32_resources">Resources on EFR32</a></li>
+<li><a class="el" href="../../dd/d6a/sdk_environment.html#ti_resources_subg">Resources on TI CC13x4</a></li>
 </ul>
 <h1><a class="anchor" id="installation_of_sdk_environment"></a>
 Installation of SDK Environment</h1>
@@ -171,6 +172,73 @@ Peripherals accessible by stack only</h2>
 Peripherals shared between the stack and the application</h2>
 <p>True Random Number Generator TRNG is available for application to use within App_init function. After App_init returns, this peripheral is reserved for Wirepas Mesh stack and all initializations done in App_init may be overwritten. Application may also take the control of RNG/TRNG by initializing the peripheral in scheduled task after App_init has returned and after Wirepas Mesh stack has started. Do note that initialization must not take place within interrupt context as interrupt could be served before this peripheral is released from Wirepas Mesh stack usage.</p>
 <h2><a class="anchor" id="peripherals_available_for_the_application_efr32"></a>
+Peripherals available for the application</h2>
+<p>All the other peripherals not listed above are free to be used by the application.</p>
+<h1><a class="anchor" id="ti_resources_subg"></a>
+Resources on TI CC13x4</h1>
+<p>The following chip variants are supported:</p><ul>
+<li>CC1354P10</li>
+<li>CC1354R10</li>
+<li>CC1314R10</li>
+</ul>
+<p>This page contains the following sections:</p><ul>
+<li><a class="el" href="../../dd/d6a/sdk_environment.html#flash_ti_subg">Flash memory available for application on TI CC13x4</a></li>
+<li><a class="el" href="../../dd/d6a/sdk_environment.html#ram_ti_subg">RAM available for application on TI CC13x4</a></li>
+<li><a class="el" href="../../dd/d6a/sdk_environment.html#peripherals_accessible_by_stack_only_ti_subg">Peripherals accessible by stack only</a></li>
+<li><a class="el" href="../../dd/d6a/sdk_environment.html#peripherals_available_for_the_application_ti_subg">Peripherals available for the application</a></li>
+</ul>
+<h2><a class="anchor" id="flash_ti_subg"></a>
+Flash memory available for application on TI CC13x4</h2>
+<p>As stated in <a class="el" href="../../d7/d28/application_operation.html#memory_partitioning">description of memory partitioning</a>, the available flash memory for application is limited by size of the memory area that is used commonly for application and also scratchpad image. If application size is too large, there is possibility that large scratchpad image will override application image. The default maximum size of the application has been set so that it is always safe to use scratchpad image that will contain both firmware and application.</p>
+<p>The <em>recommended</em> maximum size of <a class="el" href="../../dd/d9c/programming_interface.html#flash_memory">flash memory</a> for an application, according to device type: </p><table class="doxtable">
+<tr>
+<th>Device</th><th>Flash memory </th></tr>
+<tr>
+<td>CC1354P10</td><td>256 kB </td></tr>
+<tr>
+<td>CC1354R10</td><td>256 kB </td></tr>
+<tr>
+<td>CC1314R10</td><td>256 kB </td></tr>
+</table>
+<h2><a class="anchor" id="ram_ti_subg"></a>
+RAM available for application on TI CC13x4</h2>
+<p>Allocated <a class="el" href="../../dd/d9c/programming_interface.html#ram_memory">RAM</a> for application, by device type: </p><table class="doxtable">
+<tr>
+<th>Device</th><th>RAM </th></tr>
+<tr>
+<td>CC1354P10</td><td>128 kB </td></tr>
+<tr>
+<td>CC1354R10</td><td>128 kB </td></tr>
+<tr>
+<td>CC1314R10</td><td>128 kB </td></tr>
+</table>
+<h2><a class="anchor" id="peripherals_accessible_by_stack_only_ti_subg"></a>
+Peripherals accessible by stack only</h2>
+<p>Some peripherals are used by the Wirepas Mesh stack and cannot be used by the application.</p>
+<table class="doxtable">
+<tr>
+<th>Peripheral</th><th>Associated interrupts (from chip vendor files) </th></tr>
+<tr>
+<td><code>Radio</code></td><td><code>RFC_CPE_0_IRQn, RFC_CPE_1_IRQn, RFC_HW_COMB_IRQn, RFC_CMD_ACK_IRQn</code> </td></tr>
+<tr>
+<td><code>PKA</code></td><td><code>PKA_IRQ_IRQn</code> </td></tr>
+<tr>
+<td><code>AON RTC</code></td><td><code>AON_RTC_COMB_IRQn</code> </td></tr>
+<tr>
+<td><code>Watchdog</code></td><td><code>WDT_IRQ_IRQn</code> </td></tr>
+<tr>
+<td><code>GPT0</code></td><td><code>GPT0A_IRQn, GPT0B_IRQn</code> </td></tr>
+<tr>
+<td><code>CRYPTO</code></td><td><code>CRYPTO_RESULT_AVAIL_IRQ_IRQn</code> </td></tr>
+<tr>
+<td><code>TRNG</code></td><td><code>TRNG_IRQ_IRQn</code> </td></tr>
+<tr>
+<td><code>AUX combined event</code></td><td><code>AUX_COMB_IRQn</code> </td></tr>
+<tr>
+<td><code>Combined event from oscillator control</code></td><td><code>OSC_COMB_IRQn</code> </td></tr>
+</table>
+<p>All the internal interrupts of Cortex-M are handled by the stack directly (NMI, Hard Fault...)</p>
+<h2><a class="anchor" id="peripherals_available_for_the_application_ti_subg"></a>
 Peripherals available for the application</h2>
 <p>All the other peripherals not listed above are free to be used by the application.</p>
 <h1><a class="anchor" id="autotoc_md0"></a>

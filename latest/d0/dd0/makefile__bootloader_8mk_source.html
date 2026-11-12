@@ -142,56 +142,60 @@ $(document).ready(function(){initNavTree('d0/dd0/makefile__bootloader_8mk_source
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>-include $(HAL_API_PATH)makefile</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>INCLUDES += -iquote$(API_PATH) -I$(UTIL_PATH)</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>OBJS_ = $(SRCS:.c=.o)</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>OBJS = $(addprefix $(BL_BUILDPREFIX), $(OBJS_))</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span># Files to be cleaned</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>CLEAN := $(OBJS) $(BOOTLOADER_ELF) $(BOOTLOADER_HEX)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>$(BOOTLOADER_SRC): FORCE</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    @echo &quot;$(COLOR_INFO)Select bootloader from the image folder$(COLOR_END)&quot;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    $(DD)$(MKDIR) $(@D)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    $(eval key_type=$(shell $(BOOT_CONF) --in_file $(BOOTLOADER_CONFIG_INI) --get_key_type))</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    $(DD)$(FMW_SEL) --firmware_path=$(FIRMWARE_PATH)\</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                --firmware_type=&quot;wp_bootloader&quot;\</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                --archive_path=$(ARCHIVE_PATH)\</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                --extract_path=$(EXTRACT_PATH)\</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                --version=$(MIN_BOOTLOADER_VERSION)\</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                --output_path=$(@D)\</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                --output_name=&quot;bootloader&quot;\</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                --key_type=$(key_type)\</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                --unlocked=$(unprotected)\</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                --mcu=$(MCU)\</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                --mcu_sub=$(MCU_SUB)\</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                --mcu_mem_var=$(MCU_MEM_VAR)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>$(BL_BUILDPREFIX)%.o : %.c</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    @echo &quot;$(COLOR_CC)CC$(COLOR_END) $&lt;&quot;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    $(DD)$(MKDIR) $(@D)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    $(D)$(CC) $(INCLUDES) $(CFLAGS) -c $&lt; -o $@</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>$(BOOTLOADER_ELF): $(OBJS) $(BOOTLOADER_SRC)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    $(DD)$(MKDIR) $(@D)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    @echo &quot;$(COLOR_INFO)Linking with the provided lib:$(COLOR_END) $(BOOTLOADER_SRC)&quot;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    $(D)$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(BOOTLOADER_SRC) \</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>              -Wl,--defsym,__bl_length__=$(bootloader_area_length) \</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>              -Wl,-Map=$(BL_BUILDPREFIX)bootloader.map \</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>              -Wl,-T,$(LDSCRIPT) $(LIBS)</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>$(BOOTLOADER_HEX): $(BOOTLOADER_ELF)</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    $(DD)$(MKDIR) $(@D)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    @echo &quot;$(COLOR_INFO)Generating:$(COLOR_END) $@&quot;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    $(D)$(OBJCOPY) $(BOOTLOADER_ELF) -O ihex $@</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>.PHONY: all</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>all: $(BOOTLOADER_HEX)</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>clean:</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    $(D)$(RM) -rf $(CLEAN)</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span># Special ruel to force other rule to run every time</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>FORCE:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span># Do not print a warning when linking code to RAM (&quot;bootloader.elf</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span># has a LOAD segment with RWX permissions&quot;)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>LDFLAGS += -Wl,--no-warn-rwx-segments</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>OBJS_ = $(SRCS:.c=.o)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>OBJS = $(addprefix $(BL_BUILDPREFIX), $(OBJS_))</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span># Files to be cleaned</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>CLEAN := $(OBJS) $(BOOTLOADER_ELF) $(BOOTLOADER_HEX)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>$(BOOTLOADER_SRC): FORCE</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    @echo &quot;$(COLOR_INFO)Select bootloader from the image folder$(COLOR_END)&quot;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    $(DD)$(MKDIR) $(@D)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    $(eval key_type=$(shell $(BOOT_CONF) --in_file $(BOOTLOADER_CONFIG_INI) --get_key_type))</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    $(DD)$(FMW_SEL) --firmware_path=$(FIRMWARE_PATH)\</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                --firmware_type=&quot;wp_bootloader&quot;\</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                --archive_path=$(ARCHIVE_PATH)\</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                --extract_path=$(EXTRACT_PATH)\</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                --version=$(MIN_BOOTLOADER_VERSION)\</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                --output_path=$(@D)\</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                --output_name=&quot;bootloader&quot;\</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                --key_type=$(key_type)\</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                --unlocked=$(unprotected)\</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                --mcu=$(MCU)\</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                --mcu_sub=$(MCU_SUB)\</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                --mcu_mem_var=$(MCU_MEM_VAR)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>$(BL_BUILDPREFIX)%.o : %.c</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    @echo &quot;$(COLOR_CC)CC$(COLOR_END) $&lt;&quot;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    $(DD)$(MKDIR) $(@D)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    $(D)$(CC) $(INCLUDES) $(CFLAGS) -c $&lt; -o $@</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>$(BOOTLOADER_ELF): $(OBJS) $(BOOTLOADER_SRC)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    $(DD)$(MKDIR) $(@D)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    @echo &quot;$(COLOR_INFO)Linking with the provided lib:$(COLOR_END) $(BOOTLOADER_SRC)&quot;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    $(D)$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(BOOTLOADER_SRC) \</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>              -Wl,--defsym,__bl_length__=$(bootloader_area_length) \</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>              -Wl,-Map=$(BL_BUILDPREFIX)bootloader.map \</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>              -Wl,-T,$(LDSCRIPT) $(LIBS)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>$(BOOTLOADER_HEX): $(BOOTLOADER_ELF)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    $(DD)$(MKDIR) $(@D)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    @echo &quot;$(COLOR_INFO)Generating:$(COLOR_END) $@&quot;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    $(D)$(OBJCOPY) $(BOOTLOADER_ELF) -O ihex $@</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>.PHONY: all</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>all: $(BOOTLOADER_HEX)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>clean:</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    $(D)$(RM) -rf $(CLEAN)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span># Special ruel to force other rule to run every time</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>FORCE:</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.17-->

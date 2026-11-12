@@ -114,40 +114,39 @@ $(document).ready(function(){initNavTree('dd/dbc/makefile__stack_8mk_source.html
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>.DEFAULT_GOAL := all</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>stack_mode ?= normal</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>modemfw_name ?=</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>$(STACK_HEX): FORCE</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    @echo &quot;$(COLOR_INFO)Select Stack firmware from the image folder$(COLOR_END)&quot;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    $(DD)$(MKDIR) $(@D)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    $(DD)$(MKDIR) $(EXTRACT_PATH)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    $(D)$(FMW_SEL)  --firmware_path=$(FIRMWARE_PATH)\</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                --firmware_type=&quot;wp_stack&quot;\</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                --archive_path=$(ARCHIVE_PATH)\</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                --extract_path=$(EXTRACT_PATH)\</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                --output_path=$(@D)\</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                --output_name=$(FIRMWARE_NAME)\</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                --mcu=$(MCU)\</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                --mcu_sub=$(MCU_SUB)\</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                --mcu_mem_var=$(MCU_MEM_VAR)\</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                --mac_profile=$(mac_profile)\</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                --mac_profileid=$(mac_profileid)\</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                --mode=$(stack_mode)\</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                --modem_fw=$(modemfw_name)\</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                --radio=$(radio)\</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                --radio_config=$(radio_config)\</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                --version=$(MIN_STACK_VERSION)\</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                --stack_area_addr=$(stack_area_addr)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>.PHONY: all</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>all: $(STACK_HEX)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>clean:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    $(D)$(RM) -rf $(STACK_HEX)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span># Special rule to force other rule to run every time</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>FORCE:</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    stack_mode ?= normal</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>modemfw_name ?=</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>$(STACK_HEX): FORCE</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    @echo &quot;$(COLOR_INFO)Select Stack firmware from the image folder$(COLOR_END)&quot;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    $(DD)$(MKDIR) $(@D)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    $(DD)$(MKDIR) $(EXTRACT_PATH)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    $(D)$(FMW_SEL)  --firmware_path=$(FIRMWARE_PATH)\</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                --firmware_type=&quot;wp_stack&quot;\</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                --archive_path=$(ARCHIVE_PATH)\</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                --extract_path=$(EXTRACT_PATH)\</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                --output_path=$(@D)\</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                --output_name=$(FIRMWARE_NAME)\</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                --mcu=$(MCU)\</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                --mcu_sub=$(MCU_SUB)\</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                --mcu_mem_var=$(MCU_MEM_VAR)\</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                --mac_profile=$(mac_profile)\</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                --mac_profileid=$(mac_profileid)\</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                --mode=$(stack_mode)\</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                --modem_fw=$(modemfw_name)\</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                --radio=$(radio)\</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                --radio_config=$(radio_config)\</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                --version=$(MIN_STACK_VERSION)\</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                --stack_area_addr=$(stack_area_addr)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>.PHONY: all</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>all: $(STACK_HEX)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>clean:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    $(D)$(RM) -rf $(STACK_HEX)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span># Special rule to force other rule to run every time</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>FORCE:</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.17-->

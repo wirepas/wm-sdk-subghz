@@ -160,12 +160,6 @@ buffer_1[BUFFER_SIZE]</td>
 buffer_2[BUFFER_SIZE]</td>
 <td class="fielddoc">
 </td></tr>
-<tr><td class="fieldtype">
-<a id="a85a5d54c48331dff08abc48707e9c8fe" name="a85a5d54c48331dff08abc48707e9c8fe"></a>uint8_t</td>
-<td class="fieldname">
-current_writing_index</td>
-<td class="fielddoc">
-</td></tr>
 </table>
 
 </div>
@@ -188,7 +182,7 @@ current_writing_index</td>
 </div><div class="memdoc">
 <p>Get active buffer </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00033">33</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00039">39</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
 
 </div>
 </div>
@@ -209,7 +203,7 @@ current_writing_index</td>
 </div><div class="memdoc">
 <p>Get current writing index </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00049">49</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00055">55</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
 
 </div>
 </div>
@@ -240,7 +234,7 @@ current_writing_index</td>
 </div><div class="memdoc">
 <p>Increment writing index </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00052">52</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00058">58</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
 
 </div>
 </div>
@@ -265,11 +259,11 @@ current_writing_index</td>
 <div class="line">    } <span class="keywordflow">while</span>(0)</div>
 </div><!-- fragment --><p>Initialize double buffer struct </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00027">27</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>                                      {                 \</div>
-<div class="line"><span class="lineno">   28</span>        (buffers).active_buffer_p = (buffers).buffer_1; \</div>
-<div class="line"><span class="lineno">   29</span>        (buffers).current_writing_index = 0;           \</div>
-<div class="line"><span class="lineno">   30</span>    } <span class="keywordflow">while</span>(0)</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00033">33</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>                                      {                 \</div>
+<div class="line"><span class="lineno">   34</span>        (buffers).active_buffer_p = (buffers).buffer_1; \</div>
+<div class="line"><span class="lineno">   35</span>        (buffers).current_writing_index = 0;           \</div>
+<div class="line"><span class="lineno">   36</span>    } <span class="keywordflow">while</span>(0)</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -301,18 +295,18 @@ current_writing_index</td>
 <div class="line">    } <span class="keywordflow">while</span>(0)</div>
 </div><!-- fragment --><p>Swipe buffers and reset writing index </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00036">36</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>                                        {                    \</div>
-<div class="line"><span class="lineno">   37</span>        if ((buffers).active_buffer_p == (buffers).buffer_1) \</div>
-<div class="line"><span class="lineno">   38</span>        {                                                    \</div>
-<div class="line"><span class="lineno">   39</span>            (buffers).active_buffer_p = (buffers).buffer_2;  \</div>
-<div class="line"><span class="lineno">   40</span>        }                                                    \</div>
-<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">else</span>                                                 \</div>
-<div class="line"><span class="lineno">   42</span>        {                                                    \</div>
-<div class="line"><span class="lineno">   43</span>            (buffers).active_buffer_p = (buffers).buffer_1;  \</div>
-<div class="line"><span class="lineno">   44</span>        }                                                    \</div>
-<div class="line"><span class="lineno">   45</span>        (buffers).current_writing_index = 0;                \</div>
-<div class="line"><span class="lineno">   46</span>    } <span class="keywordflow">while</span>(0)</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/df6/doublebuffer_8h_source.html#l00042">42</a> of file <a class="el" href="../../d7/df6/doublebuffer_8h_source.html">doublebuffer.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                        {                    \</div>
+<div class="line"><span class="lineno">   43</span>        if ((buffers).active_buffer_p == (buffers).buffer_1) \</div>
+<div class="line"><span class="lineno">   44</span>        {                                                    \</div>
+<div class="line"><span class="lineno">   45</span>            (buffers).active_buffer_p = (buffers).buffer_2;  \</div>
+<div class="line"><span class="lineno">   46</span>        }                                                    \</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">else</span>                                                 \</div>
+<div class="line"><span class="lineno">   48</span>        {                                                    \</div>
+<div class="line"><span class="lineno">   49</span>            (buffers).active_buffer_p = (buffers).buffer_1;  \</div>
+<div class="line"><span class="lineno">   50</span>        }                                                    \</div>
+<div class="line"><span class="lineno">   51</span>        (buffers).current_writing_index = 0;                \</div>
+<div class="line"><span class="lineno">   52</span>    } <span class="keywordflow">while</span>(0)</div>
 </div><!-- fragment -->
 </div>
 </div>

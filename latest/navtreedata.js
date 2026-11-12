@@ -36,6 +36,12 @@ var NAVTREE =
         [ "Peripherals shared between the stack and the application", "dd/d6a/sdk_environment.html#peripherals_shared_between_the_stack_and_the_application_efr32", null ],
         [ "Peripherals available for the application", "dd/d6a/sdk_environment.html#peripherals_available_for_the_application_efr32", null ]
       ] ],
+      [ "Resources on TI CC13x4", "dd/d6a/sdk_environment.html#ti_resources_subg", [
+        [ "Flash memory available for application on TI CC13x4", "dd/d6a/sdk_environment.html#flash_ti_subg", null ],
+        [ "RAM available for application on TI CC13x4", "dd/d6a/sdk_environment.html#ram_ti_subg", null ],
+        [ "Peripherals accessible by stack only", "dd/d6a/sdk_environment.html#peripherals_accessible_by_stack_only_ti_subg", null ],
+        [ "Peripherals available for the application", "dd/d6a/sdk_environment.html#peripherals_available_for_the_application_ti_subg", null ]
+      ] ],
       [ "Related Material", "dd/d6a/sdk_environment.html#autotoc_md0", null ]
     ] ],
     [ "How to Develop Application with SDK", "de/d7a/how_to_develop.html", [
@@ -122,6 +128,7 @@ var NAVTREE =
         [ "HAL_UART", "d5/d7b/application_examples.html#source_makefile_hal_uart", null ],
         [ "INCLUDES", "d5/d7b/application_examples.html#source_makefile_includes", null ],
         [ "LDFLAGS", "d5/d7b/application_examples.html#source_makefile_ldflags", null ],
+        [ "LDLIBS", "d5/d7b/application_examples.html#source_makefile_ldlibs", null ],
         [ "LIBS", "d5/d7b/application_examples.html#source_makefile_libs", null ],
         [ "PROVISIONING", "d5/d7b/application_examples.html#source_makefile_provisioning", null ],
         [ "PROVISIONING_PROXY", "d5/d7b/application_examples.html#source_makefile_provisioning_proxy", null ],
@@ -131,7 +138,8 @@ var NAVTREE =
       ] ],
       [ "Tools", "d5/d7b/application_examples.html#tools_folder", [
         [ "genscratchpad.py", "d5/d7b/application_examples.html#genscratchpad_py", null ],
-        [ "INI_FILE", "d5/d7b/application_examples.html#config_mk_ini_file", null ]
+        [ "Bootloader and scratchpad .ini files", "d5/d7b/application_examples.html#config_mk_ini_file", null ],
+        [ "name_to_uint32.py", "d5/d7b/application_examples.html#name_to_uint32_py", null ]
       ] ]
     ] ],
     [ "Data Structures", "annotated.html", [
@@ -148,7 +156,7 @@ var NAVTREE =
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", "globals_func" ],
         [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
+        [ "Typedefs", "globals_type.html", "globals_type" ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", "globals_eval" ],
         [ "Macros", "globals_defs.html", "globals_defs" ]
@@ -161,18 +169,20 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d2/d9e/cbor_8h.html#a7d1bf6025bf79637dd52806ed0503331",
-"d4/d27/wms__state_8h.html#a317f50bd4ec70608fcab95aa001455fa",
-"d5/d63/dualmcu__lib_8h.html#aa267ba0cb0c8fa9778930ad837301e36a42014a979fdce9f769b4c82ae000621d",
-"d6/d50/wms__data_8h.html#ab53b6510f8ecb4a1621c905c15855164abc148375192b9cd13d5a3733def48cf6",
-"d7/dc3/tlv_8h.html#a849e9473d3954c57c1a4f976aedd019da0a29e48ca5fe6df9cd0463a0c99f4fd8",
-"d8/d21/msap__frames_8h.html#ac9e42bc3f331a9213430e7c1b1d1bc98a7606ebce7e30a9715879e112be846a22",
-"da/d1b/function__codes_8h.html#a5d932513e8009c2280045fe336ff4138a19878661f1de522fc8100573b862a973",
-"db/d41/timing_8h.html#a884497f3269a8ae82bcd0a4814997702",
-"dd/d2c/bl__interface_8h.html#a9a1d6078d92f4d46b59e7f80ef16b898a1a28228a2c91c43fd8ae40e7c992a15f",
-"de/d7a/how_to_develop.html#flashing_device",
-"df/d99/wms__otap_8h.html#a471f1fe9b71534a54c285db244a4210a",
-"index.html#bootloader_extension"
+"d1/dd6/usart__multi_8h.html#aea567829937a07dabbeecc2895c955ee",
+"d2/d9e/cbor_8h.html#ac9fb62e6e235fb84ca4d53a7005d052a",
+"d4/d27/wms__state_8h.html#ab8c691757f7e9b507deef94faf0da3d4",
+"d5/d74/shared__data_8h.html",
+"d6/d50/wms__data_8h.html#ab53b6510f8ecb4a1621c905c15855164a27b70a7629e5e66acef1ea9aefbfa05f",
+"d7/dc3/tlv_8h.html",
+"d8/d21/msap__frames_8h.html#ac1f8b5b91975877f71d5347700cf26ca",
+"d9/d2c/cborinternal__p_8h.html#a58af37618f95513c8889bfd211b6167ea93572e24dada7845113d615a5c6e1e45",
+"da/d25/a4__application__api_8h_source.html",
+"dc/d1b/rtc_8h.html#aee542072e8ed4c6421604a90538f9dc2",
+"dd/d36/mcu_2hal__api_2persistent_8h.html#ab9930b1660a026ecf19009896ea0d86a",
+"df/d62/wms__settings_8h.html#a2c1464ddff54488daf1ae6df55a637cb",
+"df/d99/wms__otap_8h.html#a49a69b2ae836dbe4e510518bae2f3dadafed523c041d64364f9cd8f1d6225e916",
+"globals_eval_c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
